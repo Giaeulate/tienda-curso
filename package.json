@@ -1,0 +1,14 @@
+{
+  "name": "tienda-curso",
+  "version": "0.1.0",
+  "description": "Repositorio de práctica del curso Agentes, Subagentes, Memoria y Skills en IA",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "start": "node packages/api/servidor.js"
+  }
+}

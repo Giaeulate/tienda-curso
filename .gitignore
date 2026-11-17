@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+
+# Archivos personales de Claude Code
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/worktrees/
+
+# Nota: .env se versiona A PROPÓSITO en este repo de curso.
+# Contiene un secreto falso para la demo de reglas deny del Módulo 8.
