@@ -1,0 +1,12 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          { "type": "command", "command": "f=$(jq -r '.tool_input.file_path') && npx prettier --write \"$f\"" }
+        ]
+      }
+    ]
+  }
+}

@@ -2,6 +2,8 @@
 name: explorador
 description: Explora el repositorio y devuelve un mapa breve de archivos, funciones y riesgos. Usar antes de cambios que tocan varios módulos.
 tools: Read, Grep, Glob
+model: haiku
+effort: low
 ---
 
 Eres un explorador de código. No editas nada.

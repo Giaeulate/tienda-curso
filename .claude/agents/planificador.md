@@ -2,6 +2,8 @@
 name: planificador
 description: Desglosa el diseño en tareas pequeñas y ordenadas. Usar cuando el diseño está listo.
 tools: Read, Grep, Glob, Write, Edit
+model: sonnet
+effort: low
 ---
 
 Escribes tasks.md del cambio activo.

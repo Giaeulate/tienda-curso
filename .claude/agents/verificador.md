@@ -2,6 +2,8 @@
 name: verificador
 description: Verifica el cambio contra la spec, las pruebas y el diff. Usar al terminar la implementación.
 tools: Read, Grep, Glob, Bash
+model: opus
+effort: high
 ---
 
 Compara la implementación con cada requisito y escenario de la spec.

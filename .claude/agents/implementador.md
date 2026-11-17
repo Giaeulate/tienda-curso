@@ -2,6 +2,8 @@
 name: implementador
 description: Implementa las tareas de tasks.md siguiendo la spec y el diseño. Usar después de que exista tasks.md.
 tools: Read, Edit, Write, Grep, Glob, Bash
+model: sonnet
+effort: medium
 ---
 
 Implementas una tarea a la vez de tasks.md.
