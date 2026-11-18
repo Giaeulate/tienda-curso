@@ -19,6 +19,21 @@ test('descuento por volumen con 10 unidades', () => {
   assert.equal(descuentoPorVolumen(lineas, 100, { minimoUnidades: 10, porcentaje: 5 }), 5);
 });
 
+test('descuento por categoría redondeado al centavo con precios sin representación binaria exacta', () => {
+  const lineas = [linea('papeleria', 4.1, 3)];
+  assert.equal(descuentoPorCategoria(lineas, { categoria: 'papeleria', porcentaje: 10 }), 1.23);
+});
+
+test('descuento por volumen redondeado al centavo', () => {
+  const lineas = [linea('papeleria', 0.7, 13)];
+  assert.equal(descuentoPorVolumen(lineas, 9.1, { minimoUnidades: 10, porcentaje: 5 }), 0.46);
+});
+
+test('suma los descuentos de categoría y volumen al centavo', () => {
+  const lineas = [linea('papeleria', 4.1, 10)];
+  assert.equal(aplicarDescuentos(lineas, 41), 6.15);
+});
+
 test('aplica las reglas vigentes', () => {
   const lineas = [linea('hogar', 20, 1)];
   assert.equal(aplicarDescuentos(lineas, 20), 0);

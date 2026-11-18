@@ -1,6 +1,7 @@
 // Pedidos: creación, líneas, totales y cierre.
 import { obtenerProducto } from '../productos/productos.js';
 import { aplicarDescuentos } from '../descuentos/descuentos.js';
+import { aCentavos, aMonto } from '../montos/montos.js';
 
 let siguienteId = 1;
 
@@ -32,13 +33,14 @@ export function agregarLinea(pedido, productoId, cantidad) {
 }
 
 export function calcularSubtotal(pedido) {
-  return pedido.lineas.reduce((acc, linea) => acc + linea.precioUnitario * linea.cantidad, 0);
+  const centavos = pedido.lineas.reduce((acc, linea) => acc + aCentavos(linea.precioUnitario) * linea.cantidad, 0);
+  return aMonto(centavos);
 }
 
 export function calcularTotal(pedido) {
   const subtotal = calcularSubtotal(pedido);
   const descuento = aplicarDescuentos(pedido.lineas, subtotal);
-  return subtotal - descuento;
+  return aMonto(aCentavos(subtotal) - aCentavos(descuento));
 }
 
 export function cerrarPedido(pedido) {

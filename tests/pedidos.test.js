@@ -44,6 +44,18 @@ test('cierra el pedido y guarda el total', () => {
   assert.equal(pedido.total, 34.5);
 });
 
+test('calcula el subtotal de 3 cuadernos con dos decimales exactos', () => {
+  const pedido = crearPedido('cli-1');
+  agregarLinea(pedido, 'p2', 3);
+  assert.equal(calcularSubtotal(pedido), 12.3);
+});
+
+test('calcula el total de 3 cuadernos con descuento de papelería con dos decimales exactos', () => {
+  const pedido = crearPedido('cli-1');
+  agregarLinea(pedido, 'p2', 3);
+  assert.equal(calcularTotal(pedido), 11.07);
+});
+
 test('no cierra pedidos vacíos', () => {
   assert.throws(() => cerrarPedido(crearPedido('cli-1')), /vacío/);
 });
