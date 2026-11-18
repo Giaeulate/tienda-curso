@@ -9,6 +9,7 @@ export function crearPedido(clienteId) {
   return { id: `ped-${siguienteId++}`, clienteId, lineas: [], estado: 'abierto' };
 }
 
+// este es un comentario
 export function agregarLinea(pedido, productoId, cantidad) {
   if (pedido.estado !== 'abierto') throw new Error('El pedido no está abierto');
   const producto = obtenerProducto(productoId);
